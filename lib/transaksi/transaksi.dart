@@ -1,19 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: TransactionPage(),
-    );
-  }
-}
-
 class TransactionPage extends StatefulWidget {
   @override
   _TransactionPageState createState() => _TransactionPageState();
@@ -52,7 +38,7 @@ class _TransactionPageState extends State<TransactionPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Ringkasan
+            // Ringkasan Transaksi
             Card(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               elevation: 4,
