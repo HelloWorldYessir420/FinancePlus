@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'transaksi/transaksi.dart';
 import 'wallet/wallet.dart';
 import 'analisis/analytics.dart';
+import 'package:provider/provider.dart';
+import 'package:finance_plus/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => WalletProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Financial Tracker',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: HomePage(),
+      title: 'Finance App',
+      home: HomePage(), // Halaman utama dengan Hotbar
     );
   }
 }
